@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Study Bunny - Focus & Care</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="setup">
+  <h2>Name your bunny</h2>
+  <img id="previewPet" src="tamagotchiSPRITES/tama_default.png" alt="bunny preview">
+
+  <input id="petNameInput" placeholder="Pet name" value="Luna">
+
+  <h3>Daily Goal</h3>
+  <select id="goalHours"></select> hours
+  <select id="goalMinutes"></select> minutes
+
+  <br><br>
+  <button onclick="startGame()">Start Studying</button>
+</div>
+
+<div id="game" class="container" style="display:none;">
+  <div class="left">
+    <h2 id="petName"></h2>
+    <p>Love: <span id="happiness">80</span></p>
+
+    <p>Hunger</p>
+    <div class="bar">
+      <div id="hungerBar"></div>
+    </div>
+
+    <p>Coins: <span id="coins">0</span></p>
+
+    <p>Progress: <span id="progress">0</span> / <span id="goalDisplay"></span> hours</p>
+    <p>Time Left: <span id="timeLeft">0</span> hours</p>
+
+    <h3>Study History</h3>
+    <ul id="history"></ul>
+    <div id="totalStat" style="margin-top: 8px; font-weight: bold; background:#9C79B8; border-radius: 40px; padding: 6px;"></div>
+  </div>
+
+  <div class="right">
+    <img id="pet" src="tamagotchiSPRITES/tama_default.png" alt="study bunny">
+
+    <div class="timer-group">Session: <span id="sessionTimer">00:00:00</span></div>
+    <div class="timer-group">Total Today: <span id="dailyTimer">00:00:00</span></div>
+    <div class="timer-group">Break: <span id="breakTimer">00:00:00</span></div>
+
+    <div>
+      <button onclick="startStudy()">Start</button>
+      <button onclick="pauseStudy()">Pause</button>
+      <button onclick="endStudy()">Stop</button>
+      <button onclick="toggleBreak()" id="breakBtn">Start Break</button>
+      <button onclick="feed()">Feed (5 coins)</button>
+    </div>
+
+    <p id="message" class="message-area"></p>
+
+    <button id="retryBtn" style="display:none;" onclick="location.reload()">Retry</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
